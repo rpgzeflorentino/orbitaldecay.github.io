@@ -77,10 +77,10 @@
 		<label class="input" for="origem">{{ origem }}</label><br><br>
 
 <center><label class="label">Atributos</label><br><br>
-    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-com }})">Comando: D{{ max_com }}</button>
-    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-manu }})">Manutenção: D{{ max_manu }}</button>
-    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-cie }})">Ciência: D{{ max_cie }}</button>
-    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-sec }})">Segurança: D{{ max_sec }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_com }})">Comando: D{{ max_com }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_manu }})">Manutenção: D{{ max_manu }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_cie }})">Ciência: D{{ max_cie }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_sec }})">Segurança: D{{ max_sec }}</button>
 <script>
 function gerarNumeroAleatorio(max) {
     var numero = Math.floor(Math.random() * max) + 1;
