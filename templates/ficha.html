@@ -84,7 +84,7 @@
     <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-est }}); aumentarEstresse()">Estresse: D{{ max-est }}</button><br><br></center>
 
 <script>
-    var estresse = 0;
+    var estresse = {{ max-est }};
 
 function gerarNumeroAleatorio(max) {
     var numero = Math.floor(Math.random() * max) + 1;
