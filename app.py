@@ -10,11 +10,11 @@ def ficha():
 def resultado():
   varnome = str(request.form['nome'])
   varorigem = str(request.form['origem'])
-  varcoman = str(request.form['coman'])
-  varcie = str(request.form['cie'])
-  varmanu = str(request.form['manu'])
-  varseg = str(request.form['seg'])
-  varequip = str(request.form['equip'])
+  varcoman = int(request.form['coman'])
+  varcie = int(request.form['cie'])
+  varmanu = int(request.form['manu'])
+  varseg = int(request.form['seg'])
+  varequip = int(request.form['equip'])
   return render_template('ficha.html',
                          nome = varnome,
                          origem = varorigem,
@@ -22,4 +22,4 @@ def resultado():
                          max_manu = varmanu,
                          max_cie = varcie,
                          max_sec = varseg,
-                         equipamentos = equip)
+                         equipamentos = varequip)
