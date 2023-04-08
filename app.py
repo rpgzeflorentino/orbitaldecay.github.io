@@ -14,7 +14,7 @@ def resultado():
   varcie = int(request.form['cie'])
   varmanu = int(request.form['manu'])
   varseg = int(request.form['seg'])
-  varequip = int(request.form['equip'])
+  varequip = str(request.form['equip'])
   return render_template('ficha.html',
                          nome = varnome,
                          origem = varorigem,
