@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ficha de Personagem</title>
+	<style>
+		body {
+			background-color: #222;
+			color: white;
+			font-family: Arial, sans-serif;
+			font-size: 18px;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			color: #00ff7f;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.ficha {
+			background-color: #333;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+			margin: 20px auto;
+			max-width: 450px;
+			padding: 20px;
+		}
+
+		.label {
+			color: #00ff7f;
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.input {
+			background-color: #444;
+			border: none;
+			border-radius: 5px;
+			color: white;
+			font-size: 16px;
+			padding: 5px;
+			width: 100%;
+		}
+
+		.button {
+			background-color: #00ff7f;
+			border: none;
+			border-radius: 5px;
+			color: black;
+			cursor: pointer;
+			font-size: 16px;
+      font-weight: bold;
+			padding: 10px;
+			margin: 5px;
+			width: 150px;;
+		}
+
+		.button:hover {
+			background-color: #22bb99;
+			color: white;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>ORBITAL DECAY</h1>
+	<div class="ficha">
+		<label class="label" for="nome">Nome:</label>
+    <label class="input" for="nome">{{ nome }}</label><br><br>
+
+		<label class="label" for="origem">Origem:</label>
+		<label class="input" for="origem">{{ origem }}</label><br><br>
+
+<center><label class="label">Atributos</label><br><br>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-com }})">Comando: D{{ max-com }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-manu }})">Manutenção: D{{ max-manu }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-cie }})">Ciência: D{{ max-cie }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-sec }})">Segurança: D{{ max-sec }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-est }}); aumentarEstresse()">Estresse: D{{ max-est }}</button><br><br></center>
+
+<script>
+    var estresse = 0;
+
+function gerarNumeroAleatorio(max) {
+    var numero = Math.floor(Math.random() * max) + 1;
+    document.getElementById("resultado").innerHTML = numero;
+}
+
+
+
+    function aumentarEstresse() {
+        if (estresse < 12) {
+            estresse += 2;
+        }
+        console.log("Estresse: " + estresse);
+    }
+</script>
+
+
+<center><label class="label" for="resultado">Resultado:</label>
+<div class="input" id="resultado"></div><br><br></center>
+
+		<label class="label" for="equipamentos">Equipamentos</label><br><br>
+                        <label class="input" for="nome">{{ equipamentos | safe }}</label><br><br>
+	
+
+	
+</div>
+
+
+</body>
+</html>
+
+
