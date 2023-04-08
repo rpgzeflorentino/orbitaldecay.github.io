@@ -81,24 +81,12 @@
     <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-manu }})">Manutenção: D{{ max_manu }}</button>
     <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-cie }})">Ciência: D{{ max_cie }}</button>
     <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-sec }})">Segurança: D{{ max_sec }}</button>
-    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max-est }}); aumentarEstresse()">Estresse: D{{ max_est }}</button><br><br></center>
-
 <script>
-    var estresse = {{ max-est }};
-
 function gerarNumeroAleatorio(max) {
     var numero = Math.floor(Math.random() * max) + 1;
     document.getElementById("resultado").innerHTML = numero;
 }
 
-
-
-    function aumentarEstresse() {
-        if (estresse < 12) {
-            estresse += 2;
-        }
-        console.log("Estresse: " + estresse);
-    }
 </script>
 
 
