@@ -54,16 +54,32 @@
 			color: black;
 			cursor: pointer;
 			font-size: 16px;
-      font-weight: bold;
+			font-weight: bold;
 			padding: 10px;
 			margin: 5px;
-			width: 150px;;
+			width: 150px;
 		}
 
 		.button:hover {
 			background-color: #22bb99;
 			color: white;
 		}
+.button-white {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 5px;
+  width: 150px;
+}
+
+.button-white:hover {
+  background-color: #eee;
+}
 
 	</style>
 </head>
@@ -71,16 +87,17 @@
 	<h1>ORBITAL DECAY</h1>
 	<div class="ficha">
 		<label class="label" for="nome">Nome:</label>
-    <label class="input" for="nome">{{ nome }}</label><br><br>
+		<label class="input" for="nome">{{ nome }}</label><br><br>
 
 		<label class="label" for="origem">Origem:</label>
 		<label class="input" for="origem">{{ origem }}</label><br><br>
 
-<center><label class="label">Atributos</label><br><br>
-    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_com }})">Comando: D{{ max_com }}</button>
-    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_manu }})">Manutenção: D{{ max_manu }}</button>
-    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_cie }})">Ciência: D{{ max_cie }}</button>
-    <button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_sec }})">Segurança: D{{ max_sec }}</button>
+		<center><label class="label">Atributos</label><br><br>
+			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_com }})">Comando: D{{ max_com }}</button>
+			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_manu }})">Manutenção: D{{ max_manu }}</button>
+			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_cie }})">Ciência: D{{ max_cie }}</button>
+			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_sec }})">Segurança: D{{ max_sec }}</button>
+		</center>
 <script>
 function gerarNumeroAleatorio(max) {
     var numero = Math.floor(Math.random() * max) + 1;
@@ -90,18 +107,53 @@ function gerarNumeroAleatorio(max) {
 </script>
 
 
+
+		<br>
+
+		<center>
+  <label class="label">Estresse</label><br><br>
+  <button class="button" id="estresseButton" onclick="aumentarEstresse()">D6</button>
+<button class="button-white" type="button" onclick="resetarEstresse()">Descansar</button>
+
+
+<script>
+  let estresseMax = 6;
+  
+  function aumentarEstresse() {
+    if (estresseMax === 6) {
+      estresseMax = 8;
+      document.getElementById("estresseButton").innerHTML = "D8";
+    } else if (estresseMax === 8) {
+      estresseMax = 10;
+      document.getElementById("estresseButton").innerHTML = "D10";
+    } else if (estresseMax === 10) {
+      estresseMax = 12;
+      document.getElementById("estresseButton").innerHTML = "D12";
+    } else if (estresseMax === 12) {
+      alert("Estresse máximo já alcançado!");
+    }
+  }
+  
+  function resetarEstresse() {
+    estresseMax = 6;
+    document.getElementById("estresseButton").innerHTML = "D6";
+    document.getElementById("resultadoEstresse").innerHTML = "";
+  }
+</script>
+
+
+
+
+</center><br>
 <center><label class="label" for="resultado">Resultado:</label>
 <div class="input" id="resultado"></div><br><br></center>
 
-		<label class="label" for="equipamentos">Equipamentos</label><br><br>
-                        <label class="input" for="nome">{{ equipamentos | safe }}</label><br><br>
-	
-
+		<center><label class="label" for="equipamentos">Equipamentos</label><br><br>
+        <label class="input" for="nome">{{ equipamentos | safe }}</label><br><br>
 	
 </div>
 
 
 </body>
 </html>
-
 
