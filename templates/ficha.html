@@ -130,8 +130,9 @@ function gerarNumeroAleatorio(max) {
       estresseMax = 12;
       document.getElementById("estresseButton").innerHTML = "D12";
     } else if (estresseMax === 12) {
-      alert("Estresse máximo já alcançado!");
-    }
+  alert("Estresse máximo já alcançado!");
+  return;
+}
     
     let numero = Math.floor(Math.random() * estresseMax) + 1;
     document.getElementById("resultado").innerHTML = numero;
