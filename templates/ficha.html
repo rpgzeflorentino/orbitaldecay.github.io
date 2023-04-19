@@ -132,9 +132,11 @@ function gerarNumeroAleatorio(max) {
     } else if (estresseMax === 12) {
       alert("Estresse máximo já alcançado!");
     }
-let resultado = Math.floor(Math.random() * estresseMax) + 1;
+    
+    let resultado = Math.floor(Math.random() * estresseMax) + 1;
     document.getElementById("resultado").innerHTML = numero;
   }
+    
   
   function resetarEstresse() {
     estresseMax = 6;
