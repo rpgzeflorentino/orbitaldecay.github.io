@@ -92,23 +92,6 @@
 		<label class="label" for="origem">Origem:</label>
 		<label class="input" for="origem">{{ origem }}</label><br><br>
 		
-		
-
-		<center><label class="label">Atributos</label><br><br>
-			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_com }})" id="comButton">Comando: D{{ max_com }}</button>
-<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_manu }})" id="manuButton">Manutenção: D{{ max_manu }}</button>
-<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_cie }})" id="cieButton">Ciência: D{{ max_cie }}</button>
-<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_sec }})" id="secButton">Segurança: D{{ max_sec }}</button>
-
-		</center>
-<script>
-function gerarNumeroAleatorio(max) {
-    var numero = Math.floor(Math.random() * max) + 1;
-    document.getElementById("resultado").innerHTML = numero;
-}
-
-</script><br>
-
 		<center><input type="checkbox" id="reduzirAtributos" onclick="atualizarAtributos()">
 <label class="label" for="reduzirAtributos">Desvantagem</label><br><br>
 			
@@ -132,6 +115,24 @@ function gerarNumeroAleatorio(max) {
   }
 }
 			</script>
+		
+
+		<center><label class="label">Atributos</label><br><br>
+			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_com }})" id="comButton">Comando: D{{ max_com }}</button>
+<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_manu }})" id="manuButton">Manutenção: D{{ max_manu }}</button>
+<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_cie }})" id="cieButton">Ciência: D{{ max_cie }}</button>
+<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_sec }})" id="secButton">Segurança: D{{ max_sec }}</button>
+
+		</center>
+<script>
+function gerarNumeroAleatorio(max) {
+    var numero = Math.floor(Math.random() * max) + 1;
+    document.getElementById("resultado").innerHTML = numero;
+}
+
+</script><br>
+
+	
 
 
 
