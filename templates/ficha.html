@@ -113,23 +113,25 @@
     var sec = document.getElementById("secButton");
 
     if (reduzir) {
-      com.innerHTML = "Comando: D" + (max_com - 2);
-      manu.innerHTML = "Manutenção: D" + (max_manu - 2);
-      cie.innerHTML = "Ciência: D" + (max_cie - 2);
-      sec.innerHTML = "Segurança: D" + (max_sec - 2);
       max_com_novo = max_com - 2;
       max_manu_novo = max_manu - 2;
       max_cie_novo = max_cie - 2;
-      max_sec_novo = max_sec - 2;        
+      max_sec_novo = max_sec - 2;      
+      com.innerHTML = "Comando: D" + (max_com_novo);
+      manu.innerHTML = "Manutenção: D" + (max_manu_novo);
+      cie.innerHTML = "Ciência: D" + (max_cie_novo);
+      sec.innerHTML = "Segurança: D" + (max_sec_novo);
+	    
     } else {
-      com.innerHTML = "Comando: D" + max_com;
-      manu.innerHTML = "Manutenção: D" + max_manu;
-      cie.innerHTML = "Ciência: D" + max_cie;
-      sec.innerHTML = "Segurança: D" + max_sec;
       max_com_novo = max_com;
       max_manu_novo = max_manu;
       max_cie_novo = max_cie;
-      max_sec_novo = max_sec;        
+      max_sec_novo = max_sec;    
+      com.innerHTML = "Comando: D" + max_com_novo;
+      manu.innerHTML = "Manutenção: D" + max_manu_novo;
+      cie.innerHTML = "Ciência: D" + max_cie_novo;
+      sec.innerHTML = "Segurança: D" + max_sec_novo;
+          
     }
   }
 </script>
