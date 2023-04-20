@@ -1,4 +1,6 @@
 <script>
+    var oi = "Oi";
+
     function atualizarAtributos() {
         var reduzir = document.getElementById("reduzirAtributos").checked;
         var com = document.getElementById("comButton");
