@@ -91,6 +91,32 @@
 
 		<label class="label" for="origem">Origem:</label>
 		<label class="input" for="origem">{{ origem }}</label><br><br>
+		
+		<input type="checkbox" id="reduzirAtributos" onclick="atualizarAtributos()">
+		<label class="label" for="reduzirAtributos">Desvantagem</label><br><br>
+
+		<script>
+		function atualizarAtributos() {
+  var reduzir = document.getElementById("reduzirAtributos").checked;
+  var com = document.getElementById("comButton");
+  var manu = document.getElementById("manuButton");
+  var cie = document.getElementById("cieButton");
+  var sec = document.getElementById("secButton");
+  
+  if (reduzir) {
+    com.innerHTML = "Comando: D" + (max_com - 2);
+    manu.innerHTML = "Manutenção: D" + (max_manu - 2);
+    cie.innerHTML = "Ciência: D" + (max_cie - 2);
+    sec.innerHTML = "Segurança: D" + (max_sec - 2);
+  } else {
+    com.innerHTML = "Comando: D" + max_com;
+    manu.innerHTML = "Manutenção: D" + max_manu;
+    cie.innerHTML = "Ciência: D" + max_cie;
+    sec.innerHTML = "Segurança: D" + max_sec;
+  }
+}
+</script>
+
 
 		<center><label class="label">Atributos</label><br><br>
 			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_com }})">Comando: D{{ max_com }}</button>
