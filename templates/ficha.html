@@ -105,41 +105,43 @@
   let max_cie_novo = {{ max_cie }};
   let max_sec_novo = {{ max_sec }};
 
-
   function atualizarAtributos() {
     var reduzir = document.getElementById("reduzirAtributos").checked;
     var com = document.getElementById("comButton");
     var manu = document.getElementById("manuButton");
     var cie = document.getElementById("cieButton");
     var sec = document.getElementById("secButton");
-  
+
     if (reduzir) {
       com.innerHTML = "Comando: D" + (max_com - 2);
       manu.innerHTML = "Manutenção: D" + (max_manu - 2);
       cie.innerHTML = "Ciência: D" + (max_cie - 2);
       sec.innerHTML = "Segurança: D" + (max_sec - 2);
-      max_com_novo = {{ max_com }} - 2;
-      max_manu_novo = {{max_manu}} - 2;
-      max_cie_novo = {{max_cie}} - 2;
-      max_sec_novo = {{max_sec}} - 2;        
+      max_com_novo = max_com - 2;
+      max_manu_novo = max_manu - 2;
+      max_cie_novo = max_cie - 2;
+      max_sec_novo = max_sec - 2;        
     } else {
       com.innerHTML = "Comando: D" + max_com;
       manu.innerHTML = "Manutenção: D" + max_manu;
       cie.innerHTML = "Ciência: D" + max_cie;
       sec.innerHTML = "Segurança: D" + max_sec;
-      max_com_novo = {{ max_com }};
-      max_manu_novo = {{ max_manu }};
-      max_cie_novo = {{ max_cie }};
-      max_sec_novo = {{ max_sec }};        
+      max_com_novo = max_com;
+      max_manu_novo = max_manu;
+      max_cie_novo = max_cie;
+      max_sec_novo = max_sec;        
     }
+  }
 </script>
 
-		<center><label class="label">Atributos</label><br><br>
-			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_com_novo }})">Comando: D{{ max_com_novo }}</button>
-			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_manu_novo }})">Manutenção: D{{ max_manu_novo }}</button>
-			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_manu_novo }})">Ciência: D{{ max_manu_novo }}</button>
-			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_manu_novo }})">Segurança: D{{ max_manu_novo }}</button>
-		</center>
+<center>
+  <label class="label">Atributos</label><br><br>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_com_novo)">Comando: D{{ max_com_novo }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_manu_novo)">Manutenção: D{{ max_manu_novo }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_cie_novo)">Ciência: D{{ max_cie_novo }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_sec_novo)">Segurança: D{{ max_sec_novo }}</button>
+</center>
+		
 <script>
 function gerarNumeroAleatorio(max) {
     var numero = Math.floor(Math.random() * max) + 1;
