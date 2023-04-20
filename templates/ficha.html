@@ -1,193 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Ficha de Personagem</title>
-	<style>
-		body {
-			background-color: #222;
-			color: white;
-			font-family: Arial, sans-serif;
-			font-size: 18px;
-			margin: 0;
-			padding: 0;
-		}
-
-		h1 {
-			color: #00ff7f;
-			font-size: 24px;
-			font-weight: bold;
-			text-align: center;
-			margin-top: 20px;
-		}
-
-		.ficha {
-			background-color: #333;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-			margin: 20px auto;
-			max-width: 450px;
-			padding: 20px;
-		}
-
-		.label {
-			color: #00ff7f;
-			font-size: 18px;
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
-
-		.input {
-			background-color: #444;
-			border: none;
-			border-radius: 5px;
-			color: white;
-			font-size: 16px;
-			padding: 5px;
-			width: 100%;
-		}
-
-		.button {
-			background-color: #00ff7f;
-			border: none;
-			border-radius: 5px;
-			color: black;
-			cursor: pointer;
-			font-size: 16px;
-			font-weight: bold;
-			padding: 10px;
-			margin: 5px;
-			width: 150px;
-		}
-
-		.button:hover {
-			background-color: #22bb99;
-			color: white;
-		}
-.button-white {
-  background-color: white;
-  border: none;
-  border-radius: 5px;
-  color: black;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px;
-  margin: 5px;
-  width: 150px;
-}
-
-.button-white:hover {
-  background-color: #eee;
-}
-
-	</style>
+    <meta charset="UTF-8">
+    <title>Ficha de Personagem</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>ORBITAL DECAY</h1>
-	<div class="ficha">
-		<label class="label" for="nome">Nome:</label>
-		<label class="input" for="nome">{{ nome }}</label><br><br>
+    <h1>ORBITAL DECAY</h1>
+    <div class="ficha">
+        <label class="label" for="nome">Nome:</label>
+        <label class="input" for="nome">{{ nome }}</label><br><br>
 
-		<label class="label" for="origem">Origem:</label>
-		<label class="input" for="origem">{{ origem }}</label><br><br>
-		
-		<center><input type="checkbox" id="reduzirAtributos" onclick="atualizarAtributos()">
-<label class="label" for="reduzirAtributos">Desvantagem</label><br><br>
-			
-			<script>function atualizarAtributos() {
-  var reduzir = document.getElementById("reduzirAtributos").checked;
-  var com = document.getElementById("comButton");
-  var manu = document.getElementById("manuButton");
-  var cie = document.getElementById("cieButton");
-  var sec = document.getElementById("secButton");
-  
-  if (reduzir) {
-    com.innerHTML = "Comando: D" + (max_com - 2);
-    manu.innerHTML = "Manutenção: D" + (max_manu - 2);
-    cie.innerHTML = "Ciência: D" + (max_cie - 2);
-    sec.innerHTML = "Segurança: D" + (max_sec - 2);
-  } else {
-    com.innerHTML = "Comando: D" + max_com;
-    manu.innerHTML = "Manutenção: D" + max_manu;
-    cie.innerHTML = "Ciência: D" + max_cie;
-    sec.innerHTML = "Segurança: D" + max_sec;
-  }
-}
-			</script>
-		
+        <label class="label" for="origem">Origem:</label>
+        <label class="input" for="origem">{{ origem }}</label><br><br>
+        
+        <center>
+            <input type="checkbox" id="reduzirAtributos" onclick="atualizarAtributos()">
+            <label class="label" for="reduzirAtributos">Desvantagem</label><br><br>
+                    
+            <label class="label">Atributos</label><br><br>
+            <button class="button" type="button" onclick="gerarNumeroAleatorio(max_com)" id="comButton">Comando: D{{ max_com }}</button>
+            <button class="button" type="button" onclick="gerarNumeroAleatorio(max_manu)" id="manuButton">Manutenção: D{{ max_manu }}</button>
+            <button class="button" type="button" onclick="gerarNumeroAleatorio(max_cie)" id="cieButton">Ciência: D{{ max_cie }}</button>
+            <button class="button" type="button" onclick="gerarNumeroAleatorio(max_sec)" id="secButton">Segurança: D{{ max_sec }}</button>
 
-		<center><label class="label">Atributos</label><br><br>
-			<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_com }})" id="comButton">Comando: D{{ max_com }}</button>
-<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_manu }})" id="manuButton">Manutenção: D{{ max_manu }}</button>
-<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_cie }})" id="cieButton">Ciência: D{{ max_cie }}</button>
-<button class="button" type="button" onclick="gerarNumeroAleatorio({{ max_sec }})" id="secButton">Segurança: D{{ max_sec }}</button>
+            <br><br>
+            <label class="label">Estresse</label><br><br>
+            <button class="button" id="estresseButton" onclick="aumentarEstresse()">D6</button>
+            <button class="button-white" type="button" onclick="resetarEstresse()">Descansar</button>
 
-		</center>
-<script>
-function gerarNumeroAleatorio(max) {
-    var numero = Math.floor(Math.random() * max) + 1;
-    document.getElementById("resultado").innerHTML = numero;
-}
-
-</script><br>
-
-	
-
-
-
-		<br>
-
-		<center>
-  <label class="label">Estresse</label><br><br>
-  <button class="button" id="estresseButton" onclick="aumentarEstresse()">D6</button>
-<button class="button-white" type="button" onclick="resetarEstresse()">Descansar</button>
-
-
-<script>
-  let estresseMax = 6;
-  
-  function aumentarEstresse() {
-    if (estresseMax === 6) {
-      estresseMax = 8;
-      document.getElementById("estresseButton").innerHTML = "D8";
-    } else if (estresseMax === 8) {
-      estresseMax = 10;
-      document.getElementById("estresseButton").innerHTML = "D10";
-    } else if (estresseMax === 10) {
-      estresseMax = 12;
-      document.getElementById("estresseButton").innerHTML = "D12";
-    } else if (estresseMax === 12) {
-  alert("Estresse máximo já alcançado!");
-  return;
-}
-    
-    let numero = Math.floor(Math.random() * estresseMax) + 1;
-    document.getElementById("resultado").innerHTML = numero;
-  }
-    
-  
-  function resetarEstresse() {
-    estresseMax = 6;
-    document.getElementById("estresseButton").innerHTML = "D6";
-    document.getElementById("resultadoEstresse").innerHTML = "";
-  }
-</script>
-
-
-
-
-</center><br>
-<center><label class="label" for="resultado">Resultado:</label>
-<div class="input" id="resultado"></div><br><br></center>
-
-		<center><label class="label" for="equipamentos">Equipamentos</label><br><br>
-<input type="text" class="input" name="equipamentos" id="equipamentos" value="" />
-
-	
-</div>
-
-
+            <br><br>
+            <label class="label">Resultado</label><br>
+            <div id="resultado"></div>
+        </center>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
-
