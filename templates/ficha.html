@@ -96,12 +96,17 @@
 		<label class="label" for="reduzirAtributos">Desvantagem</label><br><br>
 
 		<script>
-		function atualizarAtributos() {
-  var reduzir = document.getElementById("reduzirAtributos").checked;
-  var com = document.getElementById("comButton");
-  var manu = document.getElementById("manuButton");
-  var cie = document.getElementById("cieButton");
-  var sec = document.getElementById("secButton");
+  let max_com = {{ max_com }};
+  let max_manu = {{ max_manu }};
+  let max_cie = {{ max_cie }};
+  let max_sec = {{ max_sec }};
+
+  function atualizarAtributos() {
+    var reduzir = document.getElementById("reduzirAtributos").checked;
+    var com = document.getElementById("comButton");
+    var manu = document.getElementById("manuButton");
+    var cie = document.getElementById("cieButton");
+    var sec = document.getElementById("secButton");
   
   if (reduzir) {
     com.innerHTML = "Comando: D" + (max_com - 2);
