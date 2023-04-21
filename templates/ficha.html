@@ -2,6 +2,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<title>Ficha de Personagem</title>
 	<style>
 		body {
@@ -12,6 +14,10 @@
 			margin: 0;
 			padding: 0;
 		}
+		
+		@media screen and (max-width: 600px) {
+			.ficha {max-width: 100%;}
+}
 
 		h1 {
 			color: #00ff7f;
@@ -219,9 +225,9 @@ function gerarNumeroAleatorio(max) {
 <div class="result" id="resultado"></div><br><br></center>
 
 		<center><label class="label" for="equipamentos">Equipamentos</label><br><br>
-			<input type="text" class="input" name="equipamentos" id="equipamentos" value="" /><br>
-			<input type="text" class="input" name="equipamentos" id="equipamentos" value="" /><br>
-			<input type="text" class="input" name="equipamentos" id="equipamentos" value="" /><br>
+			<input type="text" class="input" name="equipamentos" id="equipamentos" value="" /><br><br>
+			<input type="text" class="input" name="equipamentos" id="equipamentos" value="" /><br><br>
+			<input type="text" class="input" name="equipamentos" id="equipamentos" value="" /><br><br>
 			<input type="text" class="input" name="equipamentos" id="equipamentos" value="" />
 			
 
