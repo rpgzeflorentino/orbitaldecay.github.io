@@ -38,7 +38,7 @@
 		}
 		.label2 {
 			color: #ffffff;
-			font-size: 18px;
+			font-size: 16px;
 			font-weight: bold;
 			margin-bottom: 10px;
 		}
@@ -107,7 +107,10 @@
 		<label class="label" for="origem">Origem:</label>
 		<label class="input" for="origem">{{ origem }}</label><br><br>
 		
-		<center><input type="checkbox" id="reduzirAtributos" onclick="atualizarAtributos()">
+		
+<center>
+  <label class="label">Atributos</label><br><br>
+<center><input type="checkbox" id="reduzirAtributos" onclick="atualizarAtributos()">
 			<label class="label2" for="reduzirAtributos">Desvantagem</label><br><br></center>
 
 <script>
@@ -150,9 +153,9 @@
     }
   }
 </script>
-
-<center>
-  <label class="label">Atributos</label><br><br>
+	
+	
+	
   <button class="button" type="button" onclick="gerarNumeroAleatorio(max_com_novo)">Comando: D{{ max_com }}</button>
   <button class="button" type="button" onclick="gerarNumeroAleatorio(max_manu_novo)">Manutenção: D{{ max_manu }}</button>
   <button class="button" type="button" onclick="gerarNumeroAleatorio(max_cie_novo)">Ciência: D{{ max_cie }}</button>
