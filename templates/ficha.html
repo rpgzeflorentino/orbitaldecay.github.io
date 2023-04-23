@@ -109,22 +109,7 @@
 	</style>
 </head>
 <body>
-	<script>
-  gapi.load('client', initClient);
-  function initClient() {
-    var apiKey = process.env.GOOGLE_SHEETS_CREDENTIALS;	  
-    gapi.client.init({
-      apiKey: apiKey,
-      discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-    }).then(function() {
-      console.log('API do Google Spreadsheet inicializada com sucesso!');
-    }, function(error) {
-      console.error('Erro ao inicializar a API do Google Spreadsheet', error);
-    });
-  }
-</script>
 
-	
 	<h1>ORBITAL DECAY</h1>
 	<div class="ficha">
 		<label class="label" for="nome">Nome:</label>
@@ -193,29 +178,9 @@
 function gerarNumeroAleatorio(max) {
     var numero = Math.floor(Math.random() * max) + 1;
     document.getElementById("resultado").innerHTML = numero;
-    var spreadsheetId = '1TeH6cHH4-qDHFHfQT-NtqjaYzSLO4BdyDs6GQyxdAAk';
-    var sheetName = 'resultados';
-    var nome = {{ nome }};
-    var newRow = [
-      new Date().toLocaleString(), // Adiciona a data atual
-      nome, 
-      numero,
-    ];
-    gapi.client.sheets.spreadsheets.values.append({
-      spreadsheetId: spreadsheetId,
-      range: sheetName + '!A1:C1', 
-      valueInputOption: 'USER_ENTERED',
-      resource: {
-        values: [newRow], 
-      },
-    }).then(function(response) {
-      console.log('Linha adicionada à planilha com sucesso:', response.result);
-    }, function(error) {
-      console.error('Erro ao adicionar linha à planilha:', error);
-    });
-  }
-</script>
-
+}
+</script>		
+		
 		<br>
 
 		<center>
