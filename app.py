@@ -21,7 +21,7 @@ def ficha():
   return render_template('index.html')
 
 
-@app.route('resultados/', methods=['POST'])
+@app.route('/resultados', methods=['POST'])
 def resulta():
   nome1 = str(registros.get("A1")[0][0])
   nome2 = str(registros.get("A2")[0][0])
