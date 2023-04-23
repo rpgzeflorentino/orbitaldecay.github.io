@@ -207,6 +207,7 @@
 		
 <script>
 function gerarNumeroAleatorio(max) {
+  var apiKey = process.env.GOOGLE_SHEETS_CREDENTIALS;		
   var nome = {{ nome }};
   var numero = Math.floor(Math.random() * max) + 1;
   document.getElementById("resultado").innerHTML = numero;
