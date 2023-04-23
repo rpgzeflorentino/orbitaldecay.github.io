@@ -162,7 +162,7 @@ function gerarNumeroAleatorio(max, nome) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "/processa", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("nome=" + nome + "&numero=" + numero);
+    xhttp.send("nome=" + nome + "numero=" + numero);
     document.getElementById("resultado").innerHTML = numero;
 }
 </script>
