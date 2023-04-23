@@ -1,36 +1,126 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Exemplo de Ficha</title>
-	<style>
-		body {
-			background-color: #222;
-			color: white;
-			font-family: Arial, sans-serif;
-			font-size: 30px;
-			margin: 0;
-			padding: 0;
-		}
-		
-		.ficha {
-			background-color: #333;
-			box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-			margin: 20px auto;
-			max-width: 150px;
-			padding: 20px;
-		}
+  <head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Ficha</title>
+    <style>
+      body {
+        background-color: #222;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 30px;
+      }
+      
+      .ficha {
+        background-color: #333;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        max-width: 150px;
+        position: absolute;
+        margin-top: -400px;
+padding: 10px;
+max-height: 380px;
+margin-left: 240px;}
 
-		.label {
-			color: #00ff7f;
-			font-size: 18px;
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
-	</style>
-</head>
+      .label {
+        color: #00ff7f;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .bloco {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .foto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        border: 3px solid #00ff7f;
+        position: relative;
+      }
+
+      .foto img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .nome {
+        position: absolute;
+        bottom: -25px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+      }
+
+      .nome a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .imagem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        position: relative;
+      }
+
+      .imagem img {
+        width: 625px;
+        height: 400px;
+        background-color: #333;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+
+      }
+    </style>
+  </head>
 <body>
+	<div class="bloco">
+	  <div class="foto">
+		<a href="https://orbitaldecay.onrender.com/ficha1">
+		  <img src="imagem1.jpg" alt="Foto 1">
+		</a>
+		<div class="nome">
+		  <a href="https://orbitaldecay.onrender.com/ficha1">Nome 1</a>
+		</div>
+	  </div>
+	  <div class="foto">
+		<a href="https://orbitaldecay.onrender.com/ficha2">
+		  <img src="imagem2.jpg" alt="Foto 2">
+		</a>
+		<div class="nome">
+		  <a href="https://orbitaldecay.onrender.com/ficha2">Nome 2</a>
+		</div>
+	  </div>
+	  <div class="foto">
+		<a href="https://orbitaldecay.onrender.com/ficha3">
+		  <img src="imagem3.jpg" alt="Foto 3">
+		</a>
+		<div class="nome">
+		  <a href="https://orbitaldecay.onrender.com/ficha3">Nome 3</a>
+		</div>
+	  </div>
+	  <div class="foto">
+		<a href=https://orbitaldecay.onrender.com/ficha4">
+		  <img src="imagem4.jpg" alt="Foto 4">
+		</a>
+		<div class="nome">
+		  <a href="https://orbitaldecay.onrender.com/ficha4">Nome 4</a>
+		</div>
+	  </div><br><br>
+	</div>
+	<div class="imagem">
+	  <img src="//i.postimg.cc/8CJxhp7W/mapa.png" alt="Imagem Grande">
+	</div>
 	<div class="ficha">
 		<center><label class="label">{{ n1 }}</label><br>
 		<body class="body">{{ r1 }}</body><br><br>
@@ -45,6 +135,7 @@
 		<body class="body">{{ r4 }}</body><br><br>
 	</div>
 </body>
-</html>
+
+
 
 
