@@ -106,5 +106,5 @@ def resulta():
 def processado():
  nome_personagem = 'José'
  numero_sorteado = 1
- registros.append_row([nome_personagem, numero_sorteado])
+ registros.insert_row([nome_personagem, numero_sorteado], index=1)
  return "Ok"
