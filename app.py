@@ -82,7 +82,7 @@ def base4():
                         max_sec = sec)
 
 
-@app.route('/resultados')
+@app.route('/')
 def resulta():
   nome1 = registros.get("A1")[0][0]
   nome2 = registros.get("A2")[0][0]
