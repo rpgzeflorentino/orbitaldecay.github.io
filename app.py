@@ -18,7 +18,7 @@ registros = planilha.worksheet("resultados")
 ficha1 = planilha.worksheet("ficha1")
 
 @app.route('/ficha1')
-def ficha1():
+def base1():
  nom = ficha1.get("B1")[0][0]
  ori = ficha1.get("B2")[0][0]
  com = ficha1.get("B3")[0][0]
