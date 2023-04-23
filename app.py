@@ -64,16 +64,16 @@ def resultado():
 
 @app.route('/ficha1')
 def ficha1():
-  varnome = str(ficha1.get("B1")[0][0])
-  varorigem = str(ficha1.get("B2")[0][0])
-  varcoman = int(ficha1.get("B3")[0][0])
-  varcie = int(ficha1.get("B4")[0][0])
-  varmanu = int(ficha1.get("B5")[0][0])
-  varseg = int(ficha1.get("B6")[0][0])
-  return render_template('ficha.html',
-                         nome = varnome,
-                         origem = varorigem,
-                         max_com = varcoman,
-                         max_manu = varmanu,
-                         max_cie = varcie,
-                         max_sec = varseg)
+ varnome = str(ficha1.get("B1")[0][0])
+ varorigem = str(ficha1.get("B2")[0][0])
+ varcoman = int(ficha1.get("B3")[0][0])
+ varcie = int(ficha1.get("B4")[0][0])
+ varmanu = int(ficha1.get("B5")[0][0])
+ varseg = int(ficha1.get("B6")[0][0])
+ return render_template('ficha.html',
+                        nome = varnome,
+                        origem = varorigem,
+                        max_com = varcoman,
+                        max_manu = varmanu,
+                        max_cie = varcie,
+                        max_sec = varseg)
