@@ -104,9 +104,7 @@ def resulta():
 
 @app.route('/processa')
 def processado():
- nome = request.form['nome']
  nome_personagem = 'José'
- numero = request.form['numero']
  numero_sorteado = 1
  registros.append_row([nome_personagem, numero_sorteado])
  return "Ok"
