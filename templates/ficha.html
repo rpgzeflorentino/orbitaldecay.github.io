@@ -4,6 +4,38 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://apis.google.com/js/api.js"></script>
+<script>
+  var apiKey = process.env.GOOGLE_SHEETS_CREDENTIALS;	
+  function initClient() {
+    gapi.client.init({
+      apiKey: apiKey,
+      discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+    }).then(function() {
+      // API do Google Sheets carregada com sucesso
+    }, function(error) {
+      console.error(error);
+    });
+  }
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    var data = new FormData(event.target);
+    var values = [[data.get('nome'), data.get('email'), data.get('mensagem')]];
+    gapi.client.sheets.spreadsheets.values.append({
+      spreadsheetId: '1TeH6cHH4-qDHFHfQT-NtqjaYzSLO4BdyDs6GQyxdAAk',
+      range: 'Sheet1!A1:C1',
+      valueInputOption: 'USER_ENTERED',
+      insertDataOption: 'INSERT_ROWS',
+      resource: { values: values },
+    }).then(function(response) {
+      console.log(response);
+    }, function(error) {
+      console.error(error);
+    });
+  }
+  gapi.load('client', initClient);
+</script>
+
 	
 	<title>Ficha de Personagem</title>
 	<style>
@@ -175,9 +207,37 @@
 		
 <script>
 function gerarNumeroAleatorio(max) {
-    var numero = Math.floor(Math.random() * max) + 1;
-    document.getElementById("resultado").innerHTML = numero;
-  }
+  var nome = {{ nome }};
+  var numero = Math.floor(Math.random() * max) + 1;
+  document.getElementById("resultado").innerHTML = numero;
+  
+  gapi.client.init({
+    apiKey: apiKey,
+    discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
+    scope: 'https://www.googleapis.com/auth/spreadsheets',
+  }).then(function() {
+    // Adicionar os valores à planilha
+    var values = [[nome, numero]];
+    var params = {
+      spreadsheetId: '1TeH6cHH4-qDHFHfQT-NtqjaYzSLO4BdyDs6GQyxdAAk',
+      range: 'resultados!A:B',
+      valueInputOption: 'USER_ENTERED',
+    };
+    var valueRangeBody = {
+      range: params.range,
+      majorDimension: 'ROWS',
+      values: values,
+    };
+    var request = gapi.client.sheets.spreadsheets.values.append(params, valueRangeBody);
+    request.then(function(response) {
+      console.log(response.result);
+    }, function(reason) {
+      console.error('Erro: ' + reason.result.error.message);
+    });
+  }, function(reason) {
+    console.error('Erro: ' + reason.result.error.message);
+  });
+}
 </script>
 
 
