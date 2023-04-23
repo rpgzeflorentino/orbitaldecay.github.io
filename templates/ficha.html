@@ -158,6 +158,11 @@
 <script>
 function gerarNumeroAleatorio(max) {
     var numero = Math.floor(Math.random() * max) + 1;
+    var nome = {{ nome }};
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/processa", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("nome=" + nome + "&numero=" + numero);
     document.getElementById("resultado").innerHTML = numero;
 }
 
