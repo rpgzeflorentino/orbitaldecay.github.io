@@ -84,14 +84,14 @@ def base4():
 
 @app.route('/resultados')
 def resulta():
-  nome1 = str(registros.get("A1")[0][0])
-  nome2 = str(registros.get("A2")[0][0])
-  nome3 = str(registros.get("A3")[0][0])
-  nome4 = str(registros.get("A4")[0][0])
-  roll1 = int(registros.get("B1")[0][0])
-  roll2 = int(registros.get("B2")[0][0])
-  roll3 = int(registros.get("B3")[0][0])
-  roll4 = int(registros.get("B4")[0][0])
+  nome1 = registros.get("A1")[0][0]
+  nome2 = registros.get("A2")[0][0]
+  nome3 = registros.get("A3")[0][0]
+  nome4 = registros.get("A4")[0][0]
+  roll1 = registros.get("B1")[0][0]
+  roll2 = registros.get("B2")[0][0]
+  roll3 = registros.get("B3")[0][0]
+  roll4 = registros.get("B4")[0][0]
   return render_template('resultados.html',
                          n1 = nome1,
                          n2 = nome2,
