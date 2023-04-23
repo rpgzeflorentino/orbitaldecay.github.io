@@ -15,16 +15,64 @@ conta = ServiceAccountCredentials.from_json_keyfile_name('credenciais.json')
 api = gspread.authorize(conta)
 planilha = api.open_by_key("1TeH6cHH4-qDHFHfQT-NtqjaYzSLO4BdyDs6GQyxdAAk")
 registros = planilha.worksheet("resultados")
-ficha1 = planilha.worksheet("ficha1")
+ficha = planilha.worksheet("fichas")
 
 @app.route('/ficha1')
 def base1():
- nom = ficha1.get("B1")[0][0]
- ori = ficha1.get("B2")[0][0]
- com = ficha1.get("B3")[0][0]
- cie = ficha1.get("B4")[0][0]
- man = ficha1.get("B5")[0][0]
- sec = ficha1.get("B6")[0][0]
+ nom = ficha.get("B1")[0][0]
+ ori = ficha.get("B2")[0][0]
+ com = ficha.get("B3")[0][0]
+ cie = ficha.get("B4")[0][0]
+ man = ficha.get("B5")[0][0]
+ sec = ficha.get("B6")[0][0]
+ return render_template('ficha.html',
+                        nome = nom,
+                        origem = ori,
+                        max_com = com,
+                        max_manu = man,
+                        max_cie = cie,
+                        max_sec = sec)
+
+@app.route('/ficha2')
+def base2():
+ nom = ficha.get("C1")[0][0]
+ ori = ficha.get("C2")[0][0]
+ com = ficha.get("C3")[0][0]
+ cie = ficha.get("C4")[0][0]
+ man = ficha.get("C5")[0][0]
+ sec = ficha.get("C6")[0][0]
+ return render_template('ficha.html',
+                        nome = nom,
+                        origem = ori,
+                        max_com = com,
+                        max_manu = man,
+                        max_cie = cie,
+                        max_sec = sec)
+
+@app.route('/ficha3')
+def base3():
+ nom = ficha.get("D1")[0][0]
+ ori = ficha.get("D2")[0][0]
+ com = ficha.get("D3")[0][0]
+ cie = ficha.get("D4")[0][0]
+ man = ficha.get("D5")[0][0]
+ sec = ficha.get("D6")[0][0]
+ return render_template('ficha.html',
+                        nome = nom,
+                        origem = ori,
+                        max_com = com,
+                        max_manu = man,
+                        max_cie = cie,
+                        max_sec = sec)
+
+@app.route('/ficha4')
+def base4():
+ nom = ficha.get("E1")[0][0]
+ ori = ficha.get("E2")[0][0]
+ com = ficha.get("E3")[0][0]
+ cie = ficha.get("E4")[0][0]
+ man = ficha.get("E5")[0][0]
+ sec = ficha.get("E6")[0][0]
  return render_template('ficha.html',
                         nome = nom,
                         origem = ori,
