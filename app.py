@@ -15,7 +15,7 @@ conta = ServiceAccountCredentials.from_json_keyfile_name('credenciais.json')
 api = gspread.authorize(conta)
 planilha = api.open_by_key("1TeH6cHH4-qDHFHfQT-NtqjaYzSLO4BdyDs6GQyxdAAk")
 registros = planilha.worksheet("resultados")
-registros = planilha.worksheet("ficha1")
+ficha1 = planilha.worksheet("ficha1")
 
 @app.route('/')
 def ficha():
