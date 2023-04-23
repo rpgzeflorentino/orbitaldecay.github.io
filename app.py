@@ -102,9 +102,9 @@ def resulta():
                          r3 = roll3,
                          r4 = roll4)
 
-@app.route('/processa')
+@app.route('/processa', methods=['POST'])
 def processado():
- nome_personagem = 'José'
- numero_sorteado = 1
+ nome_personagem = str(request.form['nome'])
+ numero_sorteado = int(request.form['numero'])
  registros.insert_row([nome_personagem, numero_sorteado], index=1)
  return "Ok"
