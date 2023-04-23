@@ -140,6 +140,7 @@
 			<label class="label2" for="reduzirAtributos">Desvantagem</label><br><br></center>
 
 <script>
+  var nome = {{ nome }};
   let max_com = {{ max_com }};
   let max_manu = {{ max_manu }};
   let max_cie = {{ max_cie }};
@@ -194,10 +195,11 @@ function gerarNumeroAleatorio(max) {
     document.getElementById("resultado").innerHTML = numero;
     var spreadsheetId = '1TeH6cHH4-qDHFHfQT-NtqjaYzSLO4BdyDs6GQyxdAAk';
     var sheetName = 'resultados';
+    var nome = {{ nome }};
     var newRow = [
       new Date().toLocaleString(), // Adiciona a data atual
-      nome, // Adiciona o nome
-      numero, // Adiciona o número gerado
+      nome, 
+      numero,
     ];
     gapi.client.sheets.spreadsheets.values.append({
       spreadsheetId: spreadsheetId,
@@ -207,19 +209,12 @@ function gerarNumeroAleatorio(max) {
         values: [newRow], 
       },
     }).then(function(response) {
-      // A linha foi adicionada com sucesso
       console.log('Linha adicionada à planilha com sucesso:', response.result);
     }, function(error) {
-      // Ocorreu um erro ao adicionar a linha à planilha
       console.error('Erro ao adicionar linha à planilha:', error);
     });
   }
 </script>
-}
-
-</script>
-
-
 
 		<br>
 
