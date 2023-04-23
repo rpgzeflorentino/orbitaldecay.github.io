@@ -63,7 +63,7 @@ def resultado():
                          equipamentos = varequip)
 
 @app.route('/ficha1')
-def resultado():
+def ficha1():
   varnome = str(ficha1.get("B1")[0][0])
   varorigem = str(ficha1.get("B2")[0][0])
   varcoman = int(ficha1.get("B3")[0][0])
