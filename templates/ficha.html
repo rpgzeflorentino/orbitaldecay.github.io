@@ -107,6 +107,7 @@
 			<label class="label2" for="reduzirAtributos">Desvantagem</label><br><br></center>
 
 <script>
+  var nome = {{ nome }};	
   let max_com = {{ max_com }};
   let max_manu = {{ max_manu }};
   let max_cie = {{ max_cie }};
@@ -149,16 +150,15 @@
 	
 	
 	
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_com_novo)">Comando: D{{ max_com }}</button>
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_manu_novo)">Manutenção: D{{ max_manu }}</button>
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_cie_novo)">Ciência: D{{ max_cie }}</button>
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_sec_novo)">Segurança: D{{ max_sec }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_com_novo, nome)">Comando: D{{ max_com }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_manu_novo, nome)">Manutenção: D{{ max_manu }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_cie_novo, nome)">Ciência: D{{ max_cie }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_sec_novo, nome)">Segurança: D{{ max_sec }}</button>
 </center>
 		
 <script>
-function gerarNumeroAleatorio(max) {
+function gerarNumeroAleatorio(max, nome) {
     var numero = Math.floor(Math.random() * max) + 1;
-    var nome = {{ nome }};
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "/processa", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
