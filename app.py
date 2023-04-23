@@ -15,6 +15,7 @@ conta = ServiceAccountCredentials.from_json_keyfile_name('credenciais.json')
 api = gspread.authorize(conta)
 planilha = api.open_by_key("1TeH6cHH4-qDHFHfQT-NtqjaYzSLO4BdyDs6GQyxdAAk")
 registros = planilha.worksheet("resultados")
+registros = planilha.worksheet("ficha1")
 
 @app.route('/')
 def ficha():
@@ -60,3 +61,19 @@ def resultado():
                          max_cie = varcie,
                          max_sec = varseg,
                          equipamentos = varequip)
+
+@app.route('/ficha1')
+def resultado():
+  varnome = str(ficha1.get("B1")[0][0])
+  varorigem = str(ficha1.get("B2")[0][0])
+  varcoman = int(ficha1.get("B3")[0][0])
+  varcie = int(ficha1.get("B4")[0][0])
+  varmanu = int(ficha1.get("B5")[0][0])
+  varseg = int(ficha1.get("B6")[0][0])
+  return render_template('ficha.html',
+                         nome = varnome,
+                         origem = varorigem,
+                         max_com = varcoman,
+                         max_manu = varmanu,
+                         max_cie = varcie,
+                         max_sec = varseg)
