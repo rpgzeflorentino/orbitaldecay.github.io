@@ -108,7 +108,5 @@ def processado():
  nome_personagem = 'José'
  numero = request.form['numero']
  numero_sorteado = 1
- registros.insert_row([], 1)
- novos = [nome_personagem, numero_sorteado]
- registros.update_row(1, novos)
+ registros.append_row([nome_personagem, numero_sorteado])
  return "Ok"
