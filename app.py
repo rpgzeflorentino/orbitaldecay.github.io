@@ -101,25 +101,3 @@ def resulta():
                          r2 = roll2,
                          r3 = roll3,
                          r4 = roll4)
-
-
-
-@app.route('/ficha', methods=['POST'])
-def resultado():
-  varnome = str(request.form['nome'])
-  varorigem = str(request.form['origem'])
-  varcoman = int(request.form['coman'])
-  varcie = int(request.form['cie'])
-  varmanu = int(request.form['manu'])
-  varseg = int(request.form['seg'])
-  varequip = str(request.form['equip'])
-  return render_template('ficha.html',
-                         nome = varnome,
-                         origem = varorigem,
-                         max_com = varcoman,
-                         max_manu = varmanu,
-                         max_cie = varcie,
-                         max_sec = varseg,
-                         equipamentos = varequip)
-
-
