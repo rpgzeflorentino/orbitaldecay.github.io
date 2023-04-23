@@ -102,7 +102,7 @@ def resulta():
                          r3 = roll3,
                          r4 = roll4)
 
-@app.route('/processa')
+@app.route('/processa', methods=['POST'])
 def processado():
     nome_personagem = request.form['nome']
     numero_sorteado = request.form['numero']
