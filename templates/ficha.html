@@ -164,6 +164,8 @@
 <script>
 	var name = "{{ nome }}";
 	function gerarNumeroAleatorio(max) {
+		var audio = new Audio('https://drive.google.com/uc?export=download&id=16EXA5ESJQsunvNW1DklPFacG7CK3N-mw');
+  		audio.play();
 		var numero = Math.floor(Math.random() * max) + 1;
 		document.getElementById("resultado").innerHTML = numero;
 		var envio = document.getElementById("resultado").innerHTML;
