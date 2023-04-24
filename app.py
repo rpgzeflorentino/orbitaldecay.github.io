@@ -104,7 +104,6 @@ def resulta():
 
 @app.route('/processa', methods=['POST'])
 def processado():
- nome_personagem = str(request.form['nome'])
  numero_sorteado = int(request.form['numero'])
- registros.insert_row([nome_personagem, numero_sorteado], index=1)
+ registros.insert_row([numero_sorteado], index=1)
  return "Ok"
