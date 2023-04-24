@@ -1,137 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Exemplo de Ficha</title>
-    <style>
-      body {
-        background-color: #222;
-        color: white;
-        font-family: Arial, sans-serif;
-        font-size: 30px;
-      }
-      
-      .ficha {
-        background-color: #333;
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-        max-width: 150px;
-        position: absolute;
-        margin-top: -400px;
-padding: 10px;
-max-height: 380px;
-margin-left: 240px;}
-
-      .label {
-        color: #00ff7f;
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-
-      .bloco {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .foto {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100px;
-        height: 100px;
-        margin: 10px;
-        border: 3px solid #00ff7f;
-        position: relative;
-      }
-
-      .foto img {
-        width: 100px;
-        height: 100px;
-      }
-
-      .nome {
-        position: absolute;
-        bottom: -25px;
-        font-size: 18px;
-        font-weight: bold;
-        color: #fff;
-        text-align: center;
-      }
-
-      .nome a {
+<head>
+	<title>Minha Página</title>
+	<style>
+		.block {
+   			height: 550px;
+            width: 100%;
+			margin-right: 20px;
+			float: left;
+            background-color: #333;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+			padding: 15px;
+		}
+		.label {
+			color: #00ff7f;
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.body {
+			display: flex;
+            justify-content: center;
+            align-items: center;
+			color: #fff;
+			font-size: 30px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.name {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.block-1 {
+			width: 150px;
+			display: flex; /* adicionado para centralizar os elementos */
+			flex-direction: column; /* adicionado para alinhar verticalmente */
+			justify-content: center; /* adicionado para centralizar horizontalmente */
+			align-items: center; /* adicionado para centralizar verticalmente */
+		}
+		.block-2 {
+            width: 100%;
+            display: flex; /* adicionado para centralizar os elementos */
+			max-width: 732px;
+            flex-direction: column; /* adicionado para alinhar verticalmente */
+            justify-content: center; /* adicionado para centralizar horizontalmente */
+			align-items: center; /* adicionado para centralizar verticalmente */
+		}
+		.block-3 {
+			width: 100px;
+			display: flex; /* adicionado para centralizar os elementos */
+			flex-direction: column; /* adicionado para alinhar verticalmente */
+			justify-content: center; /* adicionado para centralizar horizontalmente */
+			align-items: center; /* adicionado para centralizar verticalmente */
+		}
+		.image {
+			display: block;
+			margin-bottom: 5px;
+			border: 3px solid #00ff7f;
+			border-radius: 5px;
+			padding: 5px;
+			max-width: 80px;
+			max-height: 80px;
+		}
+		.name {
+			text-align: center;
+			font-weight: bold;
+			margin: 5px 0;
+			color: #fff;
+		}
+		.name + .image {
+			margin-top: 10px;
+			clear: both;
+		}
+		.name a {
         text-decoration: none;
-        color: #fff;
-      }
-
-      .imagem {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 30px;
-        position: relative;
-      }
-
-      .imagem img {
-        width: 732px;
-        height: 468px;
-        background-color: #333;
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-
-      }
-    </style>
-  </head>
-<body>
-	<div class="bloco">
-	  <div class="foto">
-		<a href="https://orbitaldecay.onrender.com/ficha1">
-		  <img src="imagem1.jpg" alt="Foto 1">
-		</a>
-		<div class="nome">
-		  <a href="https://orbitaldecay.onrender.com/ficha1">Nome 1</a>
-		</div>
-	  </div>
-	  <div class="foto">
-		<a href="https://orbitaldecay.onrender.com/ficha2">
-		  <img src="imagem2.jpg" alt="Foto 2">
-		</a>
-		<div class="nome">
-		  <a href="https://orbitaldecay.onrender.com/ficha2">Nome 2</a>
-		</div>
-	  </div>
-	  <div class="foto">
-		<a href="https://orbitaldecay.onrender.com/ficha3">
-		  <img src="imagem3.jpg" alt="Foto 3">
-		</a>
-		<div class="nome">
-		  <a href="https://orbitaldecay.onrender.com/ficha3">Nome 3</a>
-		</div>
-	  </div>
-	  <div class="foto">
-		<a href=https://orbitaldecay.onrender.com/ficha4">
-		  <img src="imagem4.jpg" alt="Foto 4">
-		</a>
-		<div class="nome">
-		  <a href="https://orbitaldecay.onrender.com/ficha4">Nome 4</a>
-		</div>
-	  </div><br><br>
+        color: #fff;}
+	</style>
+</head>
+<body style="background-color: #222;">
+	<div class="block block-1">
+		<img class="image" src="https://picsum.photos/80" alt="Imagem 1">
+		<p class="name"><a href="https://orbitaldecay.onrender.com/ficha1">RIPLEY</a></p>
+		<img class="image" src="https://picsum.photos/80" alt="Imagem 2">
+		<p class="name"><a href="https://orbitaldecay.onrender.com/ficha2">TOM</a></p>
+		<img class="image" src="https://picsum.photos/80" alt="Imagem ">
+		<p class="name"><a href="https://orbitaldecay.onrender.com/ficha3">JAMES</a></p>
+		<img class="image" src="https://picsum.photos/80" alt="Imagem 4">
+		<p class="name"><a href="https://orbitaldecay.onrender.com/ficha4">BILL</a></p>
 	</div>
-	<div class="imagem">
-	  <img src="//i.postimg.cc/8CJxhp7W/mapa.png" alt="Imagem Grande">
+	<div class="block block-2">
+		<img src="https://i.postimg.cc/8CJxhp7W/mapa.png" alt="Mapa">
 	</div>
-	<div class="ficha">
-		<center><label class="label">{{ n1 }}</label><br>
+	<div class="block block-3">
+		<label class="label">{{ n1 }}</label>
 		<body class="body">{{ r1 }}</body><br><br>
-		
-		<label class="label">{{ n2 }}</label><br>
+			
+		<label class="label">{{ n2 }}</label>
 		<body class="body">{{ r2 }}</body><br><br>
-		
-		<label class="label">{{ n3 }}</label><br>
+			
+		<label class="label">{{ n3 }}</label>
 		<body class="body">{{ r3 }}</body><br><br>
-		
-		<label class="label">{{ n4 }}</label><br>
+			
+		<label class="label">{{ n4 }}</label>
 		<body class="body">{{ r4 }}</body><br><br>
 	</div>
 </body>
+</html>
