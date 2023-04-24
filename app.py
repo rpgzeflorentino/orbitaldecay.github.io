@@ -84,6 +84,10 @@ def base4():
 
 @app.route('/')
 def resulta():
+  perso1 = ficha.get("B1")[0][0]
+  perso2 = ficha.get("C1")[0][0]
+  perso3 = ficha.get("D1")[0][0]
+  perso4 = ficha.get("E1")[0][0]
   nome1 = registros.get("A1")[0][0]
   nome2 = registros.get("A2")[0][0]
   nome3 = registros.get("A3")[0][0]
@@ -93,6 +97,10 @@ def resulta():
   roll3 = registros.get("B3")[0][0]
   roll4 = registros.get("B4")[0][0]
   return render_template('resultados.html',
+                         p1 = perso1,
+                         p2 = perso2,
+                         p3 = perso3,
+                         p4 = perso4,
                          n1 = nome1,
                          n2 = nome2,
                          n3 = nome3,
