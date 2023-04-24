@@ -18,6 +18,17 @@
 		@media screen and (max-width: 600px) {
 			.ficha {max-width: 250px;}}
 
+
+
+
+		h1 {
+			color: #00ff7f;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 20px;
+		}
+
 		.ficha {
 			background-color: #333;
 			border-radius: 10px;
@@ -97,9 +108,14 @@
 	</style>
 </head>
 <body>
+	<h1>ORBITAL DECAY</h1>
 	<div class="ficha">
 		<label class="label" for="nome">Nome:</label>
-		<label class="input" for="nome">{{ nome }}</label><br><br>		
+		<label class="input" for="nome">{{ nome }}</label><br><br>
+
+		<label class="label" for="origem">Origem:</label>
+		<label class="input" for="origem">{{ origem }}</label><br><br>
+		
 		
 <center>
   <label class="label">Atributos</label><br><br>
@@ -107,7 +123,6 @@
 			<label class="label2" for="reduzirAtributos">Desvantagem</label><br><br></center>
 
 <script>
-  var nome = {{ nome }};	
   let max_com = {{ max_com }};
   let max_manu = {{ max_manu }};
   let max_cie = {{ max_cie }};
@@ -150,24 +165,19 @@
 	
 	
 	
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_com_novo, nome)">Comando: D{{ max_com }}</button>
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_manu_novo, nome)">Manutenção: D{{ max_manu }}</button>
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_cie_novo, nome)">Ciência: D{{ max_cie }}</button>
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_sec_novo, nome)">Segurança: D{{ max_sec }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_com_novo)">Comando: D{{ max_com }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_manu_novo)">Manutenção: D{{ max_manu }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_cie_novo)">Ciência: D{{ max_cie }}</button>
+  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_sec_novo)">Segurança: D{{ max_sec }}</button>
 </center>
 		
 <script>
-var nome = "{{ nome }}";	
-function gerarNumeroAleatorio(max, nome) {
+function gerarNumeroAleatorio(max) {
     var numero = Math.floor(Math.random() * max) + 1;
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "/processa", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("nome=" + nome + "&numero=" + numero);
     document.getElementById("resultado").innerHTML = numero;
 }
-</script>
 
+</script>
 
 
 
@@ -213,7 +223,7 @@ function gerarNumeroAleatorio(max, nome) {
 
 
 </center><br>
-<center><label class="label" for="resultado">Resultado</label><br><br>
+<center><label class="label" for="resultado">Resultado:</label><br><br>
 <div class="result" id="resultado"></div><br><br></center>
 
 		<center><label class="label" for="equipamentos">Equipamentos</label><br><br>
