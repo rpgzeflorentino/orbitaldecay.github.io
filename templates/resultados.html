@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Orbital Decay</title>
+	<title>Minha Página</title>
 	<style>
 		.block {
    			height: 550px;
@@ -15,18 +15,19 @@
 		}
 		.label {
 			color: #00ff7f;
-			font-size: 18px;
+			font-size: 20px;
 			font-weight: bold;
 			margin-bottom: 10px;
+			margin-top: 30px;
 		}
 		.body {
 			display: flex;
             justify-content: center;
             align-items: center;
 			color: #fff;
-			font-size: 30px;
+			font-size: 50px;
 			font-weight: bold;
-			margin-bottom: 10px;
+			margin-bottom: 30px;
 		}
 		.name {
 			color: #fff;
@@ -95,17 +96,18 @@
 		<img src="https://i.postimg.cc/8CJxhp7W/mapa.png" alt="Mapa">
 	</div>
 	<div class="block block-3">
-		<label class="label">{{ n1 }}</label>
-		<body class="body">{{ r1 }}</body><br><br>
-			
-		<label class="label">{{ n2 }}</label>
-		<body class="body">{{ r2 }}</body><br><br>
+		<p class="name">MAIS RECENTE</p>
+		<label class="label">{{ n4 }}</label>
+		<body class="body">{{ r4 }}</body><br>
 			
 		<label class="label">{{ n3 }}</label>
-		<body class="body">{{ r3 }}</body><br><br>
+		<body class="body">{{ r3 }}</body><br>
 			
-		<label class="label">{{ n4 }}</label>
-		<body class="body">{{ r4 }}</body><br><br>
+		<label class="label">{{ n2 }}</label>
+		<body class="body">{{ r2 }}</body><br>
+			
+		<label class="label">{{ n1 }}</label>
+		<body class="body">{{ r1 }}</body>
 	</div>
 </body>
 </html>
