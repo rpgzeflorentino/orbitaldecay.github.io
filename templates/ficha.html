@@ -108,7 +108,7 @@
 	</style>
 </head>
 <body>
-	<h1>{{ nome }} | {{ origem }} </h1>
+	<h1>{{ nome }}</h1>
 	<div class="ficha">	
 		
 <center><input type="checkbox" id="reduzirAtributos" onclick="atualizarAtributos()">
@@ -184,7 +184,7 @@
 
 <script>
   let estresseMax = 6;
-  
+  var name = "{{ nome }}";
   function aumentarEstresse() {
     if (estresseMax === 6) {
       estresseMax = 8;
@@ -199,18 +199,26 @@
       estresseMax = 20;
       document.getElementById("estresseButton").innerHTML = "Estresse: D20";
     } else if (estresseMax === 20) {
-  alert("Estresse máximo já alcançado!");
-  return;
-}
+      alert("Estresse máximo já alcançado!");
+      return;
+    }
     
-    let numero = Math.floor(Math.random() * estresseMax) + 1;
-    document.getElementById("resultado").innerHTML = numero;
+    let numero2 = Math.floor(Math.random() * estresseMax) + 1;
+    document.getElementById("resultado").innerHTML = numero2;
+    var envio = document.getElementById("resultado").innerHTML;
+    $.ajax({
+      url: '/processa',
+      type: 'POST',
+      data: {numero: envio, name: name},
+      success: function(response) {
+        console.log('Número enviado com sucesso!');
+      }
+    });
   }
-    
   
   function resetarEstresse() {
     estresseMax = 6;
-    document.getElementById("estresseButton").innerHTML = "D6";
+    document.getElementById("estresseButton").innerHTML = "Estresse: D6";
     document.getElementById("resultadoEstresse").innerHTML = "";
   }
 </script>
