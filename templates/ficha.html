@@ -178,7 +178,7 @@
 	}
 </script>
 <center>
-  <button class="button" id="estresseButton" onclick="aumentarEstresse()">D6</button>
+  <button class="button" id="estresseButton" onclick="aumentarEstresse()">Estresse: D6</button>
 <button class="button-white" type="button" onclick="resetarEstresse()">Descansar</button>
 
 
@@ -188,14 +188,17 @@
   function aumentarEstresse() {
     if (estresseMax === 6) {
       estresseMax = 8;
-      document.getElementById("estresseButton").innerHTML = "D8";
+      document.getElementById("estresseButton").innerHTML = "Estresse: D8";
     } else if (estresseMax === 8) {
       estresseMax = 10;
-      document.getElementById("estresseButton").innerHTML = "D10";
+      document.getElementById("estresseButton").innerHTML = "Estresse: D10";
     } else if (estresseMax === 10) {
       estresseMax = 12;
-      document.getElementById("estresseButton").innerHTML = "D12";
+      document.getElementById("estresseButton").innerHTML = "Estresse: D12";
     } else if (estresseMax === 12) {
+      estresseMax = 20;
+      document.getElementById("estresseButton").innerHTML = "Estresse: D20";
+    } else if (estresseMax === 20) {
   alert("Estresse máximo já alcançado!");
   return;
 }
