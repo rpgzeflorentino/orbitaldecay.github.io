@@ -188,6 +188,8 @@
   let estresseMax = 6;
   var name = "{{ nome }}";
   function aumentarEstresse() {
+    var audio = new Audio('https://drive.google.com/uc?export=download&id=16EXA5ESJQsunvNW1DklPFacG7CK3N-mw');
+    audio.play();
     if (estresseMax === 6) {
       estresseMax = 8;
       document.getElementById("estresseButton").innerHTML = "Estresse: D8";
@@ -204,8 +206,6 @@
       alert("Estresse máximo já alcançado!");
       return;
     }
-    var audio = new Audio('https://drive.google.com/uc?export=download&id=16EXA5ESJQsunvNW1DklPFacG7CK3N-mw');
-    audio.play();
     let numero2 = Math.floor(Math.random() * estresseMax) + 1;
     document.getElementById("resultado").innerHTML = numero2;
     var envio = document.getElementById("resultado").innerHTML;
