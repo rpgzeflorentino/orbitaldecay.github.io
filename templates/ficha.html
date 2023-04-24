@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>Ficha de Personagem</title>
 	<style>
 		body {
@@ -172,14 +172,24 @@
 </center>
 		
 <script>
-function gerarNumeroAleatorio(max) {
-    var numero = Math.floor(Math.random() * max) + 1;
-    document.getElementById("resultado").innerHTML = numero;
-}
+		function gerarNumeroAleatorio(max) {
+			var numero = Math.floor(Math.random() * max) + 1;
+			document.getElementById("resultado").innerHTML = numero;
+			var envio = document.getElementById("resultado").innerHTML;
+			$.ajax({
+				url: '/processa',
+				type: 'POST',
+				data: {numero: envio},
+				success: function(response) {
+					console.log('Número enviado com sucesso!');
+				}
+			});
+		}
+	</script>
 
-</script>
 
-
+		
+		
 
 		<br>
 
