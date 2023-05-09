@@ -3,144 +3,255 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>Ficha de Personagem</title>
-	<link rel="stylesheet" type="text/css" href="https://rpgzeflorentino.github.io/ficha.css">
+
+	<style>
+		body {
+		background-color: #222;
+		color: white;
+		font-family: Arial, sans-serif;
+		font-size: 18px;
+		margin: 0;
+		padding: 0;
+		}
+		
+		@media screen and (max-width: 600px) {
+			.ficha {max-width: 80%;}
+		}
+		h1 {
+			color: #00ff7f;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 20px;
+		}
+		.ficha {
+			background-color: #303030;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+			margin: 20px auto;
+			width: 450px;
+			max-width: 80%;
+			padding: 20px;
+		}
+		.label {
+			color: #00ff7f;
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.label2 {
+			color: #ffffff;
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.input {
+			background-color: #444;
+			border: none;
+			border-radius: 5px;
+			color: white;
+			font-size: 16px;
+			padding: 5px;
+			width: 100%;
+		}
+		.result {
+			background-color: #444;
+			border: none;
+			border-radius: 5px;
+			color: white;
+			font-size: 32px;
+			padding: 5px;
+			max-width: 100px;
+		}
+		.button {
+			background-color: #00ff7f;
+			border: none;
+			border-radius: 5px;
+			color: black;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			margin: 5px;
+			width: 100%;
+			max-width: 160px;
+		}
+		.button:hover {
+			background-color: #22bb99;
+			color: white;
+		}
+		.button2 {
+			background-color: #FFFF00;
+			border: none;
+			border-radius: 5px;
+			color: black;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			margin: 5px;
+			width: 100%;
+			max-width: 160px;
+		}
+		.button2:hover {
+			background-color: #FFD200;
+			color: white;
+		}
+		.button-white {
+			background-color: white;
+			border: none;
+			border-radius: 5px;
+			color: black;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			margin: 5px;
+			width: 160px;
+		}
+		.button-white:hover {
+			background-color: #eee;
+		}
+		.button4 {
+			background-color: white;
+			border: none;
+			border-radius: 5px;
+			color: black;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			margin: 5px;
+			width: 60px;
+		}
+		.button4:hover {
+			background-color: #eee;
+		}
+	</style>
+
 </head>
 <body>
-	<h1>{{ nome }}</h1>
-	<div class="ficha">	
-		
-<center><input type="checkbox" id="reduzirAtributos" onclick="atualizarAtributos()">
-			<label class="label2" for="reduzirAtributos">Desvantagem</label><br><br>
-
-<script>
-  let max_com = {{ max_com }};
-  let max_manu = {{ max_manu }};
-  let max_cie = {{ max_cie }};
-  let max_sec = {{ max_sec }};
-  let max_com_novo = {{ max_com }};
-  let max_manu_novo = {{ max_manu }};
-  let max_cie_novo = {{ max_cie }};
-  let max_sec_novo = {{ max_sec }};
-
-  function atualizarAtributos() {
-    var reduzir = document.getElementById("reduzirAtributos").checked;
-    var com = document.getElementById("comButton");
-    var manu = document.getElementById("manuButton");
-    var cie = document.getElementById("cieButton");
-    var sec = document.getElementById("secButton");
-
-    if (reduzir) {
-      max_com_novo = max_com - 2;
-      max_manu_novo = max_manu - 2;
-      max_cie_novo = max_cie - 2;
-      max_sec_novo = max_sec - 2;      
-      com.innerHTML = "Comando: D" + (max_com_novo);
-      manu.innerHTML = "Manutenção: D" + (max_manu_novo);
-      cie.innerHTML = "Ciência: D" + (max_cie_novo);
-      sec.innerHTML = "Segurança: D" + (max_sec_novo);
-	    
-    } else {
-      max_com_novo = max_com;
-      max_manu_novo = max_manu;
-      max_cie_novo = max_cie;
-      max_sec_novo = max_sec;    
-      com.innerHTML = "Comando: D" + max_com_novo;
-      manu.innerHTML = "Manutenção: D" + max_manu_novo;
-      cie.innerHTML = "Ciência: D" + max_cie_novo;
-      sec.innerHTML = "Segurança: D" + max_sec_novo;
-          
-    }
-  }
-</script>
 	
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_com_novo)">Comando: D{{ max_com }}</button>
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_manu_novo)">Manutenção: D{{ max_manu }}</button>
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_cie_novo)">Ciência: D{{ max_cie }}</button>
-  <button class="button" type="button" onclick="gerarNumeroAleatorio(max_sec_novo)">Segurança: D{{ max_sec }}</button>
-</center>
+	<script>
+		let max_com = {{ max_com }};
+		let max_manu = {{ max_manu }};
+		let max_cie = {{ max_cie }};
+		let max_sec = {{ max_sec }};
+		let max_com_novo = {{ max_com }};
+		let max_manu_novo = {{ max_manu }};
+		let max_cie_novo = {{ max_cie }};
+		let max_sec_novo = {{ max_sec }};
 		
-<script>
-	var name = "{{ nome }}";
-	function gerarNumeroAleatorio(max) {
-		var audio = new Audio('https://drive.google.com/uc?export=download&id=16EXA5ESJQsunvNW1DklPFacG7CK3N-mw');
-  		audio.play();
-		var numero = Math.floor(Math.random() * max) + 1;
-		document.getElementById("resultado").innerHTML = numero;
-		var envio = document.getElementById("resultado").innerHTML;
-		$.ajax({
-			url: '/processa',
-			type: 'POST',
-			data: {numero: envio, name: name},
-			success: function(response) {
-				console.log('Número enviado com sucesso!');
+		function atualizarAtributos() {
+		  var reduzir = document.getElementById("reduzirAtributos").checked;
+		  var com = document.getElementById("comButton");
+		  var manu = document.getElementById("manuButton");
+		  var cie = document.getElementById("cieButton");
+		  var sec = document.getElementById("secButton");
+		
+		  if (reduzir) {
+			max_com_novo = max_com - 2;
+			max_manu_novo = max_manu - 2;
+			max_cie_novo = max_cie - 2;
+			max_sec_novo = max_sec - 2;      
+			com.innerHTML = "Comando: D" + (max_com_novo);
+			manu.innerHTML = "Manutenção: D" + (max_manu_novo);
+			cie.innerHTML = "Ciência: D" + (max_cie_novo);
+			sec.innerHTML = "Segurança: D" + (max_sec_novo);
+			  
+		  } else {
+			max_com_novo = max_com;
+			max_manu_novo = max_manu;
+			max_cie_novo = max_cie;
+			max_sec_novo = max_sec;    
+			com.innerHTML = "Comando: D" + max_com_novo;
+			manu.innerHTML = "Manutenção: D" + max_manu_novo;
+			cie.innerHTML = "Ciência: D" + max_cie_novo;
+			sec.innerHTML = "Segurança: D" + max_sec_novo;
+				
+		  }
+		}
+		var name = "{{ nome }}";
+			function gerarNumeroAleatorio(max) {
+				var audio = new Audio('https://drive.google.com/uc?export=download&id=16EXA5ESJQsunvNW1DklPFacG7CK3N-mw');
+				  audio.play();
+				var numero = Math.floor(Math.random() * max) + 1;
+				document.getElementById("resultado").innerHTML = numero;
+				var envio = document.getElementById("resultado").innerHTML;
+				$.ajax({
+					url: '/processa',
+					type: 'POST',
+					data: {numero: envio, name: name},
+					success: function(response) {
+						console.log('Número enviado com sucesso!');
+					}
+				});
 			}
-		});
-	}
-</script>
-<center>
-  <button class="button2" id="estresseButton" onclick="aumentarEstresse()">Estresse: D6</button>
-<button class="button-white" type="button" onclick="resetarEstresse()">Descansar</button>
-
-
-<script>
-  let estresseMax = 6;
-  var name = "{{ nome }}";
-  function aumentarEstresse() {
-    var audio = new Audio('https://drive.google.com/uc?export=download&id=16EXA5ESJQsunvNW1DklPFacG7CK3N-mw');
-    audio.play();
-    if (estresseMax === 6) {
-      estresseMax = 8;
-      document.getElementById("estresseButton").innerHTML = "Estresse: D8";
-    } else if (estresseMax === 8) {
-      estresseMax = 10;
-      document.getElementById("estresseButton").innerHTML = "Estresse: D10";
-    } else if (estresseMax === 10) {
-      estresseMax = 12;
-      document.getElementById("estresseButton").innerHTML = "Estresse: D12";
-    } else if (estresseMax === 12) {
-      estresseMax = 20;
-      document.getElementById("estresseButton").innerHTML = "Estresse: D20";
-    } else if (estresseMax === 20) {
-      alert("Estresse máximo já alcançado!");
-      return;
-    }
-    let numero2 = Math.floor(Math.random() * estresseMax) + 1;
-    document.getElementById("resultado").innerHTML = numero2;
-    var envio = document.getElementById("resultado").innerHTML;
-    $.ajax({
-      url: '/processa',
-      type: 'POST',
-      data: {numero: envio, name: name},
-      success: function(response) {
-        console.log('Número enviado com sucesso!');
-      }
-    });
-  }
-  
-  function resetarEstresse() {
-    estresseMax = 6;
-    document.getElementById("estresseButton").innerHTML = "Estresse: D6";
-    document.getElementById("resultadoEstresse").innerHTML = "";
-  }
-</script>
-
-
-
-
-</center><br>
-<center><label class="label" for="resultado">Resultado:</label><br><br>
-<div class="result" id="resultado"></div><br><br></center>
-
-		<center><label class="label" for="equipamentos">Equipamentos</label><br><br>
-<textarea class="input" name="equipamentos" id="equipamentos" rows="4"></textarea>
-
+			let estresseMax = 6;
+			var name = "{{ nome }}";
+			function aumentarEstresse() {
+			  var audio = new Audio('https://drive.google.com/uc?export=download&id=16EXA5ESJQsunvNW1DklPFacG7CK3N-mw');
+			  audio.play();
+			  if (estresseMax === 6) {
+				estresseMax = 8;
+				document.getElementById("estresseButton").innerHTML = "Estresse: D8";
+			  } else if (estresseMax === 8) {
+				estresseMax = 10;
+				document.getElementById("estresseButton").innerHTML = "Estresse: D10";
+			  } else if (estresseMax === 10) {
+				estresseMax = 12;
+				document.getElementById("estresseButton").innerHTML = "Estresse: D12";
+			  } else if (estresseMax === 12) {
+				estresseMax = 20;
+				document.getElementById("estresseButton").innerHTML = "Estresse: D20";
+			  } else if (estresseMax === 20) {
+				alert("Estresse máximo já alcançado!");
+				return;
+			  }
+			  let numero2 = Math.floor(Math.random() * estresseMax) + 1;
+			  document.getElementById("resultado").innerHTML = numero2;
+			  var envio = document.getElementById("resultado").innerHTML;
+			  $.ajax({
+				url: '/processa',
+				type: 'POST',
+				data: {numero: envio, name: name},
+				success: function(response) {
+				  console.log('Número enviado com sucesso!');
+				}
+			  });
+			}
 			
+			function resetarEstresse() {
+			  estresseMax = 6;
+			  document.getElementById("estresseButton").innerHTML = "Estresse: D6";
+			  document.getElementById("resultadoEstresse").innerHTML = "";
+			}
+		  </script>
 
-	
+<h1>{{ nome }}</h1>
+<div class="ficha">
+  <center>
+    <input type="checkbox" id="reduzirAtributos" onclick="atualizarAtributos()">
+    <label class="label2" for="reduzirAtributos">Desvantagem </label><button class="button4" type="button" onclick="gerarNumeroAleatorio(10)">D10</button>
+	<br><br>
+
+    <button class="button" type="button" onclick="gerarNumeroAleatorio(max_com_novo)">Comando: D{{ max_com }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio(max_manu_novo)">Manutenção: D{{ max_manu }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio(max_cie_novo)">Ciência: D{{ max_cie }}</button>
+    <button class="button" type="button" onclick="gerarNumeroAleatorio(max_sec_novo)">Segurança: D{{ max_sec }}</button>
+
+    <button class="button2" id="estresseButton" onclick="aumentarEstresse()">Estresse: D6</button>
+    <button class="button-white" type="button" onclick="resetarEstresse()">Descansar</button><br><br>
+
+    <label class="label" for="resultado">Resultado:</label><br><br>
+    <div class="result" id="resultado"></div><br>
+
+    <label class="label" for="equipamentos">Equipamentos</label><br><br>
+    <textarea class="input" id="equipamentos" rows="4"></textarea>
+  </center>
 </div>
-
-
+				
+</div>
 </body>
 </html>
