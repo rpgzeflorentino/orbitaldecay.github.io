@@ -4,7 +4,125 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<title>Ficha de Personagem</title>	
+	<title>Ficha de Personagem</title>
+	<style>
+		body {
+			background-color: #222;
+			color: white;
+			font-family: Arial, sans-serif;
+			font-size: 18px;
+			margin: 0;
+			padding: 0;
+		}
+		
+		@media screen and (max-width: 600px) {
+			.ficha {max-width: 80%;}}
+
+
+
+
+		h1 {
+			color: #00ff7f;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.ficha {
+			background-color: #303030;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+			margin: 20px auto;
+			width: 450px;
+			max-width: 80%;
+			padding: 20px;
+		}
+
+		.label {
+			color: #00ff7f;
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.label2 {
+			color: #ffffff;
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		.input {
+			background-color: #444;
+			border: none;
+			border-radius: 5px;
+			color: white;
+			font-size: 16px;
+			padding: 5px;
+			width: 100%;
+		}
+		.result {
+			background-color: #444;
+			border: none;
+			border-radius: 5px;
+			color: white;
+			font-size: 32px;
+			padding: 5px;
+			max-width: 100px;
+		}
+		.button {
+			background-color: #00ff7f;
+			border: none;
+			border-radius: 5px;
+			color: black;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			margin: 5px;
+			width: 100%;
+			max-width: 160px;
+		}
+
+		.button:hover {
+			background-color: #22bb99;
+			color: white;
+		}
+		.button2 {
+			background-color: #FFFF00;
+			border: none;
+			border-radius: 5px;
+			color: black;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			margin: 5px;
+			width: 100%;
+			max-width: 160px;
+		}
+		.button2:hover {
+			background-color: #FFD200;
+			color: white;
+		}
+.button-white {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 5px;
+  width: 160px;
+}
+
+.button-white:hover {
+  background-color: #eee;
+}
+
+	</style>
 </head>
 <body>
 	<h1>{{ nome }}</h1>
