@@ -105,6 +105,23 @@
 			background-color: #FFD200;
 			color: white;
 		}
+		.button3 {
+			background-color: #eee;
+			border: none;
+			border-radius: 5px;
+			color: black;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			margin: 5px;
+			width: 100%;
+			max-width: 50px;
+		}
+		.button3:hover {
+			background-color: #eee;
+			color: black;
+		}
 .button-white {
   background-color: white;
   border: none;
@@ -129,7 +146,7 @@
 	<div class="ficha">	
 		
 <center><input type="checkbox" id="reduzirAtributos" onclick="atualizarAtributos()">
-			<label class="label2" for="reduzirAtributos">Desvantagem</label><br><br>
+<label class="label2" for="reduzirAtributos">Desvantagem</label><button class="button" type="button" onclick="gerarNumeroAleatorio(10)">D10</button><br><br>
 
 <script>
   let max_com = {{ max_com }};
