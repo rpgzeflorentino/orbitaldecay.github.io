@@ -108,3 +108,33 @@ def processar():
  nome = request.form['name']
  registros.insert_row([nome, numero], index=1)
  return "Ok"
+
+@app.route('/dados_atualizados')
+def dados_atualizados():
+    perso1 = ficha.get("B1")[0][0]
+    perso2 = ficha.get("C1")[0][0]
+    perso3 = ficha.get("D1")[0][0]
+    perso4 = ficha.get("E1")[0][0]
+    nome1 = registros.get("A1")[0][0]
+    nome2 = registros.get("A2")[0][0]
+    nome3 = registros.get("A3")[0][0]
+    nome4 = registros.get("A4")[0][0]
+    roll1 = registros.get("B1")[0][0]
+    roll2 = registros.get("B2")[0][0]
+    roll3 = registros.get("B3")[0][0]
+    roll4 = registros.get("B4")[0][0]
+    dados = {
+        'perso1': perso1,
+        'perso2': perso2,
+        'perso3': perso3,
+        'perso4': perso4,
+        'nome1': nome1,
+        'nome2': nome2,
+        'nome3': nome3,
+        'nome4': nome4,
+        'roll1': roll1,
+        'roll2': roll2,
+        'roll3': roll3,
+        'roll4': roll4
+    }
+    return json.dumps(dados)
