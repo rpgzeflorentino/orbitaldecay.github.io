@@ -128,14 +128,14 @@
       type: 'GET',
       dataType: 'json',
       success: function(data) {
-        $('#nome1').textContent = data.n1;
-        $('#nome2').textContent = data.n2;
-        $('#nome3').textContent = data.n3;
-        $('#nome4').textContent = data.n44;
-        $('#roll1').textContent = data.r1;
-        $('#roll2').textContent = data.r2;
-        $('#roll3').textContent = data.r3;
-        $('#roll4').textContent = data.r4;
+        $('#nome1').innerHTML = data.n1;
+        $('#nome2').innerHTML = data.n2;
+        $('#nome3').innerHTML = data.n3;
+        $('#nome4').innerHTML = data.n4;
+        $('#roll1').innerHTML = data.r1;
+        $('#roll2').innerHTML = data.r2;
+        $('#roll3').innerHTML = data.r3;
+        $('#roll4').innerHTML = data.r4;
       }
     });
   }
