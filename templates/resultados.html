@@ -107,42 +107,18 @@
 		<img src="https://i.postimg.cc/8CJxhp7W/mapa.png" alt="Mapa">
 	</div>
 	<div class="block block-3">
-  <p class="name">MAIS RECENTE</p>
-  <label class="label" id="n1-label">{{ n1 }}</label>
-  <body class="body" id="r1-body">{{ r1 }}</body><br>
-
-  <label class="label" id="n2-label">{{ n2 }}</label>
-  <body class="body" id="r2-body">{{ r2 }}</body><br>
-
-  <label class="label" id="n3-label">{{ n3 }}</label>
-  <body class="body" id="r3-body">{{ r3 }}</body><br>
-
-  <label class="label" id="n4-label">{{ n4  }}</label>
-  <body class="body" id="r4-body">{{ r4 }}</body>
-</div>
-
-	<script>
-  function atualizaPagina() {
-    $.ajax({
-      url: '/dados_atualizados',
-      type: 'GET',
-      dataType: 'json',
-      success: function(data) {
-        $('#nome1').innerHTML = data.n1;
-        $('#nome2').innerHTML = data.n2;
-        $('#nome3').innerHTML = data.n3;
-        $('#nome4').innerHTML = data.n4;
-        $('#roll1').innerHTML = data.r1;
-        $('#roll2').innerHTML = data.r2;
-        $('#roll3').innerHTML = data.r3;
-        $('#roll4').innerHTML = data.r4;
-      }
-    });
-  }
-
-  setInterval(atualizaPagina, 5000);
-</script>
-
-
+		<p class="name">MAIS RECENTE</p>
+		<label class="label">{{ n1 }}</label>
+		<body class="body">{{ r1 }}</body><br>
+			
+		<label class="label">{{ n2 }}</label>
+		<body class="body">{{ r2 }}</body><br>
+			
+		<label class="label">{{ n3 }}</label>
+		<body class="body">{{ r3 }}</body><br>
+			
+		<label class="label">{{ n4 }}</label>
+		<body class="body">{{ r4 }}</body>
+	</div>
 </body>
 </html>
