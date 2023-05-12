@@ -121,6 +121,28 @@
   <body class="body" id="r4-body">{{ r4 }}</body>
 </div>
 
+	<script>
+  function atualizaPagina() {
+    $.ajax({
+      url: '/dados_atualizados',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        $('#nome1').textContent = data.n1;
+        $('#nome2').textContent = data.n2;
+        $('#nome3').textContent = data.n3;
+        $('#nome4').textContent = data.n44;
+        $('#roll1').textContent = data.r1;
+        $('#roll2').textContent = data.r2;
+        $('#roll3').textContent = data.r3;
+        $('#roll4').textContent = data.r4;
+      }
+    });
+  }
+
+  setInterval(atualizaPagina, 5000);
+</script>
+
 
 </body>
 </html>
