@@ -107,38 +107,40 @@
 		<img src="https://i.postimg.cc/8CJxhp7W/mapa.png" alt="Mapa">
 	</div>
 	<div class="block block-3">
-		<p class="name">MAIS RECENTE</p>
-		<label class="label">{{ n1 }}</label>
-		<body class="body">{{ r1 }}</body><br>
-			
-		<label class="label">{{ n2 }}</label>
-		<body class="body">{{ r2 }}</body><br>
-			
-		<label class="label">{{ n3 }}</label>
-		<body class="body">{{ r3 }}</body><br>
-			
-		<label class="label">{{ n4 }}</label>
-		<body class="body">{{ r4 }}</body>
-	</div>
-	
-	<script>
-  function atualizarBloco3() {
-    fetch('/dados')
+  <p class="name">MAIS RECENTE</p>
+  <label class="label" id="n1-label">{{ n1 }}</label>
+  <body class="body" id="r1-body">{{ r1 }}</body><br>
+
+  <label class="label" id="n2-label">{{ n2 }}</label>
+  <body class="body" id="r2-body">{{ r2 }}</body><br>
+
+  <label class="label" id="n3-label">{{ n3 }}</label>
+  <body class="body" id="r3-body">{{ r3 }}</body><br>
+
+  <label class="label" id="n4-label">{{ n4  }}</label>
+  <body class="body" id="r4-body">{{ r4 }}</body>
+</div>
+
+<script>
+  function atualizarSecao() {
+    fetch('/obter-dados-da-secao')
       .then(response => response.json())
       .then(data => {
-        document.querySelector('.block-3 .label:nth-of-type(1)').textContent = data.n1;
-        document.querySelector('.block-3 .body:nth-of-type(1)').textContent = data.r1;
-        document.querySelector('.block-3 .label:nth-of-type(2)').textContent = data.n2;
-        document.querySelector('.block-3 .body:nth-of-type(2)').textContent = data.r2;
-        document.querySelector('.block-3 .label:nth-of-type(3)').textContent = data.n3;
-        document.querySelector('.block-3 .body:nth-of-type(3)').textContent = data.r3;
-        document.querySelector('.block-3 .label:nth-of-type(4)').textContent = data.n4;
-        document.querySelector('.block-3 .body:nth-of-type(4)').textContent = data.r4;
-      });
+        document.querySelector('#n1-label').textContent = data.n1;
+        document.querySelector('#r1-body').textContent = data.r1;
+        document.querySelector('#n2-label').textContent = data.n2;
+        document.querySelector('#r2-body').textContent = data.r2;
+        document.querySelector('#n3-label').textContent = data.n3;
+        document.querySelector('#r3-body').textContent = data.r3;
+        document.querySelector('#n4-label').textContent = data.n4;
+        document.querySelector('#r4-body').textContent = data.r4;
+      })
+      .catch(error => console.error(error));
   }
 
-  setInterval(atualizarBloco3, 4000);
+  setInterval(atualizarSecao, 4000);
 </script>
+
 
 </body>
 </html>
