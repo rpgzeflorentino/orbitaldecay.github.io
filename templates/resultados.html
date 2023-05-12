@@ -120,5 +120,25 @@
 		<label class="label">{{ n4 }}</label>
 		<body class="body">{{ r4 }}</body>
 	</div>
+	
+	<script>
+  function atualizarBloco3() {
+    fetch('/dados')
+      .then(response => response.json())
+      .then(data => {
+        document.querySelector('.block-3 .label:nth-of-type(1)').textContent = data.n1;
+        document.querySelector('.block-3 .body:nth-of-type(1)').textContent = data.r1;
+        document.querySelector('.block-3 .label:nth-of-type(2)').textContent = data.n2;
+        document.querySelector('.block-3 .body:nth-of-type(2)').textContent = data.r2;
+        document.querySelector('.block-3 .label:nth-of-type(3)').textContent = data.n3;
+        document.querySelector('.block-3 .body:nth-of-type(3)').textContent = data.r3;
+        document.querySelector('.block-3 .label:nth-of-type(4)').textContent = data.n4;
+        document.querySelector('.block-3 .body:nth-of-type(4)').textContent = data.r4;
+      });
+  }
+
+  setInterval(atualizarBloco3, 2000);
+</script>
+
 </body>
 </html>
