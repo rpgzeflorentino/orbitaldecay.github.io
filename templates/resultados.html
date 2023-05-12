@@ -122,23 +122,22 @@
 </div>
 
 <script>
-  function atualizarSecao() {
-    fetch('/obter-dados-da-secao')
-      .then(response => response.json())
-      .then(data => {
-        document.querySelector('#n1-label').textContent = data.n1;
-        document.querySelector('#r1-body').textContent = data.r1;
-        document.querySelector('#n2-label').textContent = data.n2;
-        document.querySelector('#r2-body').textContent = data.r2;
-        document.querySelector('#n3-label').textContent = data.n3;
-        document.querySelector('#r3-body').textContent = data.r3;
-        document.querySelector('#n4-label').textContent = data.n4;
-        document.querySelector('#r4-body').textContent = data.r4;
-      })
-      .catch(error => console.error(error));
-  }
+  setInterval(function() {
+  fetch('/dados')
+    .then(response => response.json())
+    .then(data => {
+      document.querySelector('#n1-label').textContent = data.n1;
+      document.querySelector('#r1-body').textContent = data.r1;
+      document.querySelector('#n2-label').textContent = data.n2;
+      document.querySelector('#r2-body').textContent = data.r2;
+      document.querySelector('#n3-label').textContent = data.n3;
+      document.querySelector('#r3-body').textContent = data.r3;
+      document.querySelector('#n4-label').textContent = data.n4;
+      document.querySelector('#r4-body').textContent = data.r4;
+    })
+    .catch(error => console.error(error));
+}, 5000);
 
-  setInterval(atualizarSecao, 4000);
 </script>
 
 
