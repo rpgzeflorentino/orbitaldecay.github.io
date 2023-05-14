@@ -101,6 +101,10 @@ def resulta():
                          r2 = roll2,
                          r3 = roll3,
                          r4 = roll4)
+ 
+@app.route('/monstro')
+def imagem():
+ return render_template('imagem.html')
 
 @app.route('/processa', methods=['POST'])
 def processar():
