@@ -88,7 +88,7 @@ def resulta():
   roll2 = registros.get("B2")[0][0]
   roll3 = registros.get("B3")[0][0]
   roll4 = registros.get("B4")[0][0]
-  imagem = registros.get("A8")[0][0]
+  imagem = ficha.get("A8")[0][0]
   return render_template('resultados.html',
                          p1 = perso1,
                          p2 = perso2,
