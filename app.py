@@ -88,6 +88,7 @@ def resulta():
   roll2 = registros.get("B2")[0][0]
   roll3 = registros.get("B3")[0][0]
   roll4 = registros.get("B4")[0][0]
+  imagem = registros.get("A8")[0][0]
   return render_template('resultados.html',
                          p1 = perso1,
                          p2 = perso2,
@@ -100,12 +101,9 @@ def resulta():
                          r1 = roll1,
                          r2 = roll2,
                          r3 = roll3,
-                         r4 = roll4)
+                         r4 = roll4,
+                        img = imagem)
  
-@app.route('/monstro')
-def imagem():
- return render_template('imagem.html')
-
 @app.route('/processa', methods=['POST'])
 def processar():
  numero = request.form['numero']
